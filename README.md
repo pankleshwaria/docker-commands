@@ -10,7 +10,7 @@ Gives docker client and the server version
 docker version
 ```
 
-### Docker - Run
+## Docker - Run
 
 ### Run - Attached Mode
 Docker run command Pull / download the image and runs the container. **If the docker is unable to find the mentioned image, it tries to fetch it from [Docker Hub](https://hub.docker.com/) which is the default docker repository**. 
@@ -36,8 +36,7 @@ Run docker container in interactive mode and attached terminal
 docker run -it <image-name>
 ```
 
----
-### Docker - List Containers
+## Docker - List Containers
 
 List all running container
 
@@ -50,8 +49,8 @@ List all running as well as previously exited containers
 ```bash
 docker ps -a
 ```
----
-### Docker - Start/Stop Container
+
+## Docker - Start/Stop Container
 
 
 Starts container with the matching name.
@@ -71,9 +70,9 @@ Delete the docker container. Note: All the state and data within the container w
 ```bash
 docker rm <container-name>
 ```
-----
 
-### Docker Images
+
+## Docker Images
 
 List of images present and their size
 
@@ -92,9 +91,9 @@ Deletes the docker image. Remember to delete all dependent containers (Container
 ```bash
 docker rmi <image-name>
 ```
----
 
-### Docker - Logs
+
+## Docker - Logs
 
 Returns all data about the container in the JSON format
 
@@ -107,8 +106,8 @@ View the logs of container
 ```bash
 docker logs <container-name>
 ```
----
-### Docker - Port Mapping / Port Declaration
+
+## Docker - Port Mapping / Port Declaration
 
 Since the container run in an isolated environment, you cannot access the container from outside the host (Machine that is hosting the container). Eg from a web browser. In order to make the container accessible to outside world we need to map the port between host and the container.
 On mapping the ports all the traffic on the host machine port is redirected to container port and vise-versa.
@@ -118,25 +117,23 @@ docker run -p <host-port>:<container-port> <image-name>
 Eg: docker run -p 3120:8080 node:latest
 ```
 
-### Docker - Volume Mapping
+## Docker - Volume Mapping
 Maps volume on your host machine with volume on docker container so that the data is not deleted when the docker container is deleted/destroyed.
 
 ```bash
 docker run -v <host-volume>:<container-volume> <image-name>
 Eg: docker run -v /opt/datadir:/var/lib/mysql mysql
 ```
----
 
-### Docker - Environment Variables:
+## Docker - Environment Variables:
 You can set/pass environment variables to the application running in the container.
 
 ```bash
 docker run -e <key=value> <image-name>
 Eg: docker run APP_COLOR=Green simple-webapp-color
 ```
----
 
-### Docker - How to create your own image? :thinking:
+## Docker - How to create your own image? :thinking:
 * First decide what needs to be containerized.
 * Write down steps that you would take if you do it manually **in the write order**.
 * Create Dockerfile in the folder with the instructions decided in step 2.
@@ -169,7 +166,6 @@ Build image
 ```bash
 docker build --name simple-python-app 
 ```
----
 
 ## Contributing and Licence
 This repo is only for educational purpose. Feel free to do clone, modify and share this repository.
